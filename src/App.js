@@ -1,4 +1,4 @@
-import classes from "./App.module.css";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 import Home from "./Pages/Home";
@@ -8,7 +8,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div className={classes.App}>
+    <div className="App">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
