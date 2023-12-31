@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { exerciseOptions, fetchData } from "../Utils/fetchData";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-function SearchExercises() {
+import HorizontalScrollBar from "./HorizontalScrollBar";
+function SearchExercises({
+  setExercises,
+  selectedBodyPart,
+  setSelectedBodyPart,
+}) {
   const [search, setSearch] = useState("");
-  const [exercises, setExercises] = useState([]);
+
   const [bodyPartsList, setBodyPartsList] = useState([]);
+
   useEffect(() => {
     const fetchbodyPartsList = async () => {
       const bodyPartsData = await fetchData(
@@ -12,7 +18,7 @@ function SearchExercises() {
         exerciseOptions
       );
       console.log(bodyPartsData);
-      setBodyPartsList(["all", [...bodyPartsData]]);
+      setBodyPartsList(["all", ...bodyPartsData]);
     };
     fetchbodyPartsList();
   }, []);
@@ -74,9 +80,11 @@ function SearchExercises() {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        {bodyPartsList.map((bodypart) => (
-          <p>{bodypart}</p>
-        ))}
+        <HorizontalScrollBar
+          selectedBodyPart={selectedBodyPart}
+          setSelectedBodyPart={setSelectedBodyPart}
+          data={bodyPartsList}
+        />
       </Box>
     </Stack>
   );

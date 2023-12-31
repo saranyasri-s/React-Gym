@@ -5,11 +5,22 @@ import Exercises from "../Components/Exercises";
 import SearchExercises from "../Components/SearchExercises";
 import HeroBanner from "../Components/HeroBanner";
 function Home() {
+  const [selectedBodyPart, setSelectedBodyPart] = useState("all");
+  const [exercises, setExercises] = useState("");
+
   return (
     <Box>
       <HeroBanner />
-      <SearchExercises></SearchExercises>
-      <Exercises></Exercises>
+      <SearchExercises
+        setExercises={setExercises}
+        selectedBodyPart={selectedBodyPart}
+        setSelectedBodyPart={setSelectedBodyPart}
+      ></SearchExercises>
+      <Exercises
+        setExercises={setExercises}
+        selectedBodyPart={selectedBodyPart}
+        setSelectedBodyPart={setSelectedBodyPart}
+      ></Exercises>
     </Box>
   );
 }
