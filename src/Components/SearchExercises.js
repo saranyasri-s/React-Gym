@@ -73,6 +73,11 @@ function SearchExercises() {
           Search
         </Button>
       </Box>
+      <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
+        {bodyPartsList.map((bodypart) => (
+          <p>{bodypart}</p>
+        ))}
+      </Box>
     </Stack>
   );
 }
