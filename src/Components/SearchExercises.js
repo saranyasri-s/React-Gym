@@ -17,7 +17,7 @@ function SearchExercises({
         "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
         exerciseOptions
       );
-      console.log(bodyPartsData);
+
       setBodyPartsList(["all", ...bodyPartsData]);
     };
     fetchbodyPartsList();
@@ -79,6 +79,7 @@ function SearchExercises({
           Search
         </Button>
       </Box>
+
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizontalScrollBar
           selectedBodyPart={selectedBodyPart}
