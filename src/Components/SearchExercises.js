@@ -3,14 +3,29 @@ import { exerciseOptions, fetchData } from "../Utils/fetchData";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 function SearchExercises() {
   const [search, setSearch] = useState("");
+  const [exercises, setExercises] = useState([]);
+  const [bodyPartsList, setBodyPartsList] = useState([]);
+  useEffect(() => {
+    const fetchbodyPartsList = async () => {
+      const bodyPartsData = await fetchData(
+        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+        exerciseOptions
+      );
+      console.log(bodyPartsData);
+      setBodyPartsList(["all", [...bodyPartsData]]);
+    };
+    fetchbodyPartsList();
+  }, []);
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPart/back",
+        `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${search}`,
         exerciseOptions
       );
       console.log(search);
       console.log(exercisesData);
+      setExercises(exercisesData);
+      setSearch("");
     }
   };
   return (
