@@ -38,7 +38,7 @@ function Navbar() {
             href="#exercises"
             style={{ textDecoration: "none", color: "#3A1212" }}
           >
-            Exercises{" "}
+            Exercises
           </a>
         </Stack>
       </Stack>{" "}

@@ -32,6 +32,7 @@ function SearchExercises({
       console.log(exercisesData);
       setExercises(exercisesData);
       setSearch("");
+      window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
     }
   };
   return (
