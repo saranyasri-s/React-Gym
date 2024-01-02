@@ -23,7 +23,9 @@ function Detail({ exerciseDetail }) {
         className="detail-image"
       ></img>
       <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
-        <Typography variant="h3">{name}</Typography>
+        <Typography textTransform="capitalize" variant="h3">
+          {name}
+        </Typography>
         <Typography variant="h6">
           Exercises keep you strong. {name} is one of the best exercises to
           target your {target}. It will help you improve your mood and gain
@@ -45,7 +47,9 @@ function Detail({ exerciseDetail }) {
                 style={{ height: "50px", width: "50px" }}
               ></img>
             </Button>
-            <Typography textTransform="capitalize" variant="h5">{item.name}</Typography>{" "}
+            <Typography textTransform="capitalize" variant="h5">
+              {item.name}
+            </Typography>{" "}
           </Stack>
         ))}
       </Stack>
