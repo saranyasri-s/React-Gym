@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-
+import ExerciseCard from "./ExerciseCard";
 import BodyPart from "./BodyPart";
 import { Box, Typography } from "@mui/material";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
@@ -25,7 +25,12 @@ const RightArrow = () => {
     </Typography>
   );
 };
-function HorizontalScrollBar({ data, selectedBodyPart, setSelectedBodyPart }) {
+function HorizontalScrollBar({
+  data,
+  selectedBodyPart,
+  setSelectedBodyPart,
+  isBodyParts,
+}) {
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((bodypart) => (
@@ -35,11 +40,15 @@ function HorizontalScrollBar({ data, selectedBodyPart, setSelectedBodyPart }) {
           itemId={bodypart.id || bodypart}
           m="0 40px"
         >
-          <BodyPart
-            bodypart={bodypart}
-            selectedBodyPart={selectedBodyPart}
-            setSelectedBodyPart={setSelectedBodyPart}
-          />
+          {isBodyParts ? (
+            <BodyPart
+              bodypart={bodypart}
+              selectedBodyPart={selectedBodyPart}
+              setSelectedBodyPart={setSelectedBodyPart}
+            />
+          ) : (
+            <ExerciseCard exercise={bodypart}></ExerciseCard>
+          )}
         </Box>
       ))}
     </ScrollMenu>

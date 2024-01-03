@@ -86,6 +86,7 @@ function SearchExercises({
           selectedBodyPart={selectedBodyPart}
           setSelectedBodyPart={setSelectedBodyPart}
           data={bodyPartsList}
+          isBodyParts={true}
         />
       </Box>
     </Stack>

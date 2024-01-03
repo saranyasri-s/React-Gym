@@ -53,10 +53,10 @@ function ExerciseDetails() {
         exerciseVideos={exerciseVideos}
         name={exerciseDetail.name}
       />
-      {/* <SimilarExercises
+      <SimilarExercises
         targetMuscleExercises={targetMuscleExercises}
         equipmentExercises={equipmentExercises}
-      /> */}
+      />
     </Box>
   );
 }
