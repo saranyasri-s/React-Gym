@@ -5,7 +5,6 @@ function ExerciseVideos({ exerciseVideos, name }) {
     return <p>Loading</p>;
   }
 
-  console.log(exerciseVideos + "bbbbb");
   return (
     <Box sx={{ marginTop: { lg: "200px", xs: "20px" } }} p="20px">
       <Typography variant="h3" mb="33px">
@@ -34,6 +33,14 @@ function ExerciseVideos({ exerciseVideos, name }) {
               src={exerciseVideos[0].video.thumbnails[0].url}
               alt={exerciseVideos[0].video.title}
             ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[3].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[3].video.channelName}
+              </Typography>
+            </Box>
           </a>
           <a
             key={exerciseVideos[1].video.videoId}
@@ -46,6 +53,14 @@ function ExerciseVideos({ exerciseVideos, name }) {
               src={exerciseVideos[1].video.thumbnails[0].url}
               alt={exerciseVideos[1].video.title}
             ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[1].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[1].video.channelName}
+              </Typography>
+            </Box>
           </a>
           <a
             key={exerciseVideos[2].video.videoId}
@@ -58,6 +73,74 @@ function ExerciseVideos({ exerciseVideos, name }) {
               src={exerciseVideos[2].video.thumbnails[0].url}
               alt={exerciseVideos[2].video.title}
             ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[2].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[2].video.channelName}
+              </Typography>
+            </Box>
+          </a>
+          <a
+            key={exerciseVideos[4].video.videoId}
+            className="exercise-video"
+            href={`https://www.youtube.com/watch?v=${exerciseVideos[4].video.videoId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={exerciseVideos[4].video.thumbnails[0].url}
+              alt={exerciseVideos[4].video.title}
+            ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[4].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[4].video.channelName}
+              </Typography>
+            </Box>
+          </a>
+          <a
+            key={exerciseVideos[5].video.videoId}
+            className="exercise-video"
+            href={`https://www.youtube.com/watch?v=${exerciseVideos[5].video.videoId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={exerciseVideos[5].video.thumbnails[0].url}
+              alt={exerciseVideos[5].video.title}
+            ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[5].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[5].video.channelName}
+              </Typography>
+            </Box>
+          </a>
+          <a
+            key={exerciseVideos[6].video.videoId}
+            className="exercise-video"
+            href={`https://www.youtube.com/watch?v=${exerciseVideos[6].video.videoId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={exerciseVideos[6].video.thumbnails[0].url}
+              alt={exerciseVideos[6].video.title}
+            ></img>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {exerciseVideos[6].video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {exerciseVideos[6].video.channelName}
+              </Typography>
+            </Box>
           </a>
         </Stack>
       )}

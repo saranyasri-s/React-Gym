@@ -15,6 +15,8 @@ import SimilarExercises from "../Components/SimilarExercises";
 function ExerciseDetails() {
   const [exerciseDetail, setExerciseDetail] = useState({});
   const [exerciseVideos, setExerciseVideos] = useState([]);
+  const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
+  const [equipmentExercises, setEquipmentExercises] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -29,9 +31,17 @@ function ExerciseDetails() {
         `https://youtube-search-and-download.p.rapidapi.com/search?query=${exercisedata.name}`,
         youtubeSearchOptions
       );
-      console.log(exerciseVideosData + "ssss");
       setExerciseVideos(exerciseVideosData.contents);
-      console.log(exerciseVideosData.contents + "ssss");
+      const targetMuscleExercisesdata = await fetchData(
+        `https://exercisedb.p.rapidapi.com/exercises/target/${exercisedata.target}`,
+        exerciseOptions
+      );
+      setTargetMuscleExercises(targetMuscleExercisesdata);
+      const equipmentExercisesdata = await fetchData(
+        `https://exercisedb.p.rapidapi.com/exercises/equipment/${exercisedata.equipment}`,
+        exerciseOptions
+      );
+      setEquipmentExercises(equipmentExercisesdata);
     };
     fetchExercisesData();
   }, [id]);
@@ -43,7 +53,10 @@ function ExerciseDetails() {
         exerciseVideos={exerciseVideos}
         name={exerciseDetail.name}
       />
-      <SimilarExercises />
+      {/* <SimilarExercises
+        targetMuscleExercises={targetMuscleExercises}
+        equipmentExercises={equipmentExercises}
+      /> */}
     </Box>
   );
 }
